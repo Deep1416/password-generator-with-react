@@ -18,13 +18,15 @@ function App() {
     let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     if (number) {
       str += "0123456789";
+      
       // console.log(str);
     }
+   
     if (charShow) {
       str += "~!@#$%^&*()_+><`{}[]";
       // console.log(str);
     }
-
+    console.log(str);
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1);
       pass += str.charAt(char);
@@ -84,11 +86,10 @@ function App() {
               type="checkbox"
               name=""
               id="check"
-              defaultChecked={number}
+              checked={number}
               onChange={() => {
-                setNumber((prev) => {
-                  !prev;
-                });
+                setNumber((prev) =>!prev
+                );
               }}
             />
             <label htmlFor="check">Number</label>
@@ -97,15 +98,14 @@ function App() {
             <input
               type="checkbox"
               name=""
-              id="check"
-              defaultChecked={charShow}
+              id="check1"
+              checked={charShow}
               onChange={() => {
-                setCharShow((prev) => {
-                  !prev;
-                });
+                setCharShow((prev) => !prev
+                );
               }}
             />
-            <label htmlFor="check">Special characters</label>
+            <label htmlFor="check1">Special characters</label>
           </div>
         </div>
       </div>
